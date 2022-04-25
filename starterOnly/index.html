@@ -17,9 +17,8 @@
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      
-      <a href="#" class="active"><span>Accueil</span></a>
-      <a href="#"><span>Détails de l'évènement</span></a>
+      <a href="#" ><span>Accueil</span></a>
+      <a href="#" class="active"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
       <a href="#"><span>Contact</span></a>
       <a href="#"><span>Évènements passés</span></a>
@@ -60,7 +59,7 @@
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="validate(event);"
             >
               <div
                 class="formData">
@@ -71,7 +70,8 @@
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                />
+                <br>
               </div>
               <div
                 class="formData">
@@ -81,7 +81,8 @@
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                />
+                <br>
               </div>
               <div
                 class="formData">
@@ -91,7 +92,8 @@
                   type="email"
                   id="email"
                   name="email"
-                /><br>
+                />
+                <br>
               </div>
               <div
                 class="formData">
@@ -101,18 +103,19 @@
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                />
+                <br>
               </div>
-              <div
-                class="formData">
+              <div class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
               </div>
+              <br>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
                 class="formData">
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input_obligatory"
                   type="radio"
                   id="location1"
                   name="location"
@@ -123,7 +126,7 @@
                   New York</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input_obligatory"
                   type="radio"
                   id="location2"
                   name="location"
@@ -134,7 +137,7 @@
                   San Francisco</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input_obligatory"
                   type="radio"
                   id="location3"
                   name="location"
@@ -145,7 +148,7 @@
                   Seattle</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input_obligatory"
                   type="radio"
                   id="location4"
                   name="location"
@@ -156,7 +159,7 @@
                   Chicago</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input_obligatory"
                   type="radio"
                   id="location5"
                   name="location"
@@ -167,7 +170,7 @@
                   Boston</label
                 >
                 <input
-                  class="checkbox-input"
+                  class="checkbox-input checkbox-input_obligatory"
                   type="radio"
                   id="location6"
                   name="location"
@@ -178,6 +181,7 @@
                   Portland</label
                 >
               </div>
+              <br>
 
               <div
                 class="formData">
@@ -192,10 +196,11 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
+                <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
@@ -206,6 +211,11 @@
                 value="C'est parti"
               />
             </form>
+            <div id="confirm-signup">
+              <p>Merci pour votre inscription</p>
+              <br>
+              <input class="btn-submit" id="confirm-signup-btn" type="button" value="Fermer">
+            </div> 
           </div>
         </div>
       </div>
@@ -216,5 +226,6 @@
       </p>
     </footer>
     <script src="modal.js"></script>
+    <script src="testInput.js"></script>
   </body>
 </html>
