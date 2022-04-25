@@ -421,6 +421,7 @@ input {
   color: #fff;
   position: relative;
   text-align: left;
+  min-width: 424px;
 }
 .hero-content::after {
   content: "";
