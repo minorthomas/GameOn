@@ -37,6 +37,10 @@ img {
   margin: 3.5%;
 }
 
+.fa-bars {
+  color: red;
+}
+
 .header-logo {
   float: left;
 }
@@ -61,6 +65,10 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 10px;
+}
+
+.topnav a:hover i {
+  color: #ffffff;
 }
 
 .topnav a.active {
