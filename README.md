@@ -1,5 +1,5 @@
 # Projet GameOn
-__PROJET__ 
+__PROJET__  
 Implémenter un formulaire d'inscription sur la base d'un site d'évènement de jeux-vidéo 
 Afficher les erreurs d'entrée utilisateur 
 Renvoyer vers une page de validation après l'inscription 
