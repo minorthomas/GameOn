@@ -193,6 +193,10 @@ main {
   margin: 15px auto;
 }
 
+.formData {
+  margin-bottom: 1em;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;
@@ -215,7 +219,7 @@ input {
 }
 .formData[data-error]::after {
   content: attr(data-error);
-  font-size: 0.5em;
+  font-size: 0.55em;
   color: #e54858;
   display: block;
   margin-top: 7px;

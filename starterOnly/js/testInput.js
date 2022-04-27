@@ -20,7 +20,7 @@ const errorMessages = {
     firstNameError: "Le prénom doit contenir 2 caractères minimum",
     lastNameError: "Le nom doit contenir 2 caractères minimum",
     emailError: "Adresse mail invalide",
-    birthdateError: "Date de naissance invalide",
+    birthdateError: "16 ans ou + pour participer à un tournoi GameOn",
     quantityError: "Quantité invalide",
     locationError: "Une case doit être cochée",
     termsError: "Les conditions d'utilisation sont obligatoires",
@@ -92,13 +92,11 @@ function emailTest() {
 
 //birthdate
 function birthdateTest() {
-	let birthdate = new Date(birthdateInput.value);
-	let today = new Date();
-	if (birthdate <= today && birthdate != null) {
-        return true;
-	} else {
-		return false;
-	}
+	let birthdate = new Date(birthdateInput.value); //valeur user
+	let today = new Date(); //date aujourd'hui
+    today.setFullYear(today.getFullYear() - 16); //recup la valeur année - 16 
+
+    return birthdate <= today; 
 }
 
 //quantity
