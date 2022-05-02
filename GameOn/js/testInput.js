@@ -26,6 +26,8 @@ const errorMessages = {
     termsError: "Les conditions d'utilisation sont obligatoires",
 };
 
+let nameRegex = /^[a-zA-Z]+$/;
+
 /*Invalid input function
 ---------------------*/
 function isInvalid(element, message) {
@@ -55,7 +57,7 @@ function removeError() {
     let inputs = document.querySelectorAll(
         '.formData[data-error-visible="true"]'
     );
-    for (let input of inputs) { 
+    for (let input of inputs) {
         input.removeAttribute("data-error-visible");
         input.removeAttribute("data-error");
     };
@@ -68,7 +70,7 @@ function removeError() {
 function firstNameTest() {
     let value = firstNameInput.value;
     if (value.length >= 2 && value !== null) {
-        return true;
+        return nameRegex.test(value);
     } else {
         return false;
     };
@@ -78,7 +80,7 @@ function firstNameTest() {
 function lastNameTest() {
     let value = lastNameInput.value;
     if (value.length >= 2 && value !== null) {
-        return true;
+        return nameRegex.test(value);
     } else {
         return false;
     };
@@ -92,30 +94,30 @@ function emailTest() {
 
 //birthdate
 function birthdateTest() {
-	let birthdate = new Date(birthdateInput.value); //valeur user
-	let today = new Date(); //date aujourd'hui
+    let birthdate = new Date(birthdateInput.value); //valeur user
+    let today = new Date(); //date aujourd'hui
     today.setFullYear(today.getFullYear() - 16); //recup la valeur année - 16 
 
-    return birthdate <= today; 
+    return birthdate <= today;
 }
 
 //quantity
 function quantityTest() {
-	let quantityRegex = /^[0-9]+$/;
-	return quantityRegex.test(quantityInput.value);
+    let quantityRegex = /^[0-9]+$/;
+    return quantityRegex.test(quantityInput.value);
 };
 
 //location
 function locationTest() {
-	for (let radio of locationInput) {
-		if (radio.checked === true) return true;
-	}
-	return false;
+    for (let radio of locationInput) {
+        if (radio.checked === true) return true;
+    }
+    return false;
 }
 
 //terms
 function termsTest() {
-	return termsInput.checked;
+    return termsInput.checked;
 }
 
 /*Appel des fonctions
@@ -140,7 +142,7 @@ function validate(event) {
         isValidInput = false;
         isInvalid(birthdateInput, errorMessages.birthdateError);
     }
-    if (!quantityTest()) { 
+    if (!quantityTest()) {
         isValidInput = false;
         isInvalid(quantityInput, errorMessages.quantityError);
     }
