@@ -30,6 +30,10 @@ let nameRegex = /^[a-zA-Z]+$/;
 
 /*Invalid input function
 ---------------------*/
+/**
+ * @param  {dom} element
+ * @param  {string} message
+ */
 function isInvalid(element, message) {
     let parent;
 
@@ -69,6 +73,9 @@ function removeError() {
 
 /*Test input functions
 -------------------------*/
+/**
+ * @param  {dom} element
+ */
 function nameTest(element) {
     let value = element.value;
     if (value.length >= 2 && value !== null) {
