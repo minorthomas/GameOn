@@ -32,11 +32,15 @@ let nameRegex = /^[a-zA-Z]+$/;
 ---------------------*/
 function isInvalid(element, message) {
     let parent;
+
+    console.log(NodeList.prototype.isPrototypeOf(element));
+
     if (NodeList.prototype.isPrototypeOf(element)) { //get parent de l'element cible
         parent = element[0].parentNode;
     } else {
         parent = element.parentNode;
     }
+
     parent.setAttribute("data-error-visible", true); //add l'attr d'erreur
     parent.setAttribute("data-error", message); //add le second attr d'erreur
 };
@@ -65,20 +69,8 @@ function removeError() {
 
 /*Test input functions
 -------------------------*/
-
-//firtsname
-function firstNameTest() {
-    let value = firstNameInput.value;
-    if (value.length >= 2 && value !== null) {
-        return nameRegex.test(value);
-    } else {
-        return false;
-    };
-};
-
-//lastname
-function lastNameTest() {
-    let value = lastNameInput.value;
+function nameTest(element) {
+    let value = element.value;
     if (value.length >= 2 && value !== null) {
         return nameRegex.test(value);
     } else {
@@ -96,7 +88,7 @@ function emailTest() {
 function birthdateTest() {
     let birthdate = new Date(birthdateInput.value); //valeur user
     let today = new Date(); //date aujourd'hui
-    today.setFullYear(today.getFullYear() - 16); //recup la valeur année - 16 
+    today.setFullYear(today.getFullYear() - 16); //recup la valeur année - 16
 
     return birthdate <= today;
 }
@@ -124,13 +116,14 @@ function termsTest() {
 -------------------------*/
 function validate(event) {
     event.preventDefault();
+    
     let isValidInput = true;
     removeError();
-    if (!firstNameTest()) { //firstname test
+    if (!nameTest(firstNameInput)) { //firstname test
         isValidInput = false;
         isInvalid(firstNameInput, errorMessages.firstNameError);
     }
-    if (!lastNameTest()) { //lastname test
+    if (!nameTest(lastNameInput)) { //lastname test
         isValidInput = false;
         isInvalid(lastNameInput, errorMessages.lastNameError);
     }

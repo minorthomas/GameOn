@@ -1,5 +1,5 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -13,18 +13,19 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const closeModalBtn = document.querySelector(".close");
 
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-// launch modal form
+//function that opens the modal
 function launchModal() {
   modalbg.style.display = "block";
 }
 
-//close modal event
-closeModalBtn.addEventListener("click", closeModal);
+// launch modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-//close modal funct
+//function that closes the modal
 function closeModal() {
   modalbg.style.display = "none";
+  removeError(); //remove all errors after close modal
 }
+
+//close modal event
+closeModalBtn.addEventListener("click", closeModal);
