@@ -147,8 +147,6 @@ function validate(event) {
         termsTest(termsInput)
     ];
 
-    console.log(locationTest(locationInput));
-
     if (validationArray.every(isValid => isValid)) {
         removeError();
         return isValid();
