@@ -23,7 +23,6 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 //function that closes the modal
 function closeModal() {
   modalbg.style.display = "none";
-  removeError(); //remove all errors after close modal
 }
 
 //close modal event
