@@ -15,14 +15,19 @@ const quantityInput = document.querySelector("#quantity");
 const locationInput = document.querySelectorAll(".checkbox-input[type=radio]");
 const termsInput = document.getElementById("checkbox1");
 
+/*Regex
+-------------------*/
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const nameRegex = /^[A-Za-z]+(-[A-Za-z]+)*$/; //accepte les noms et prenoms composes
+
 const formElements = [
     {
         value: firstNameInput,
-        error: "2 caractères minimum"
+        error: "Prénom incorrect"
     },
     {
         value: lastNameInput,
-        error: "2 caractères minimum"
+        error: "Nom incorrect"
     },
     {
         value: emailInput,
@@ -93,7 +98,6 @@ function removeError() {
 //functions that test each input
 function nameTest(element) {
     let value = element.value;
-    let nameRegex = /^[a-zA-Z]+$/;
     if (value.length >= 2 && value !== null) {
         return nameRegex.test(value);
     }
@@ -102,23 +106,42 @@ function nameTest(element) {
 
 function emailTest(element) {
     let value = element.value;
-    let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(value);
 };
 
+// function birthdateTest(element) {
+//     let value = element.value;
+//     let birthdate = new Date(value);
+//     let today = new Date();
+//     today.setFullYear(today.getFullYear() - 16);
+
+//     console.log(typeof value);
+
+//     return birthdate <= today;
+// }
+
 function birthdateTest(element) {
     let value = element.value;
-    let birthdate = new Date(value); //valeur user
-    let today = new Date(); //date aujourd'hui
-    today.setFullYear(today.getFullYear() - 16); //recup la valeur année - 16
+    let today = new Date();
+    let birthdate = new Date(value);
+    let age = today.getFullYear() - birthdate.getFullYear();
+    let month = today.getMonth() - birthdate.getMonth();
 
-    return birthdate <= today;
+    if (month < 0 || (month === 0 && today.getDate() < birthdate.getDate())) {
+        age--;
+    }
+
+    if (age >= 16) {
+        return true;
+    }
+    return false;
 }
 
 function quantityTest(element) {
-    let quantityRegex = /^[0-9]+$/;
-    return quantityRegex.test(element.value);
+    if (element.value >= 0 && element.value <= 99) {
+        return true;
+    }
+    return false;
 };
 
 function locationTest(element) {
