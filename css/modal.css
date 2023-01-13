@@ -437,6 +437,7 @@ input:focus {
     position: relative;
     text-align: left;
     padding: 3em;
+    max-width: 400px;
 }
 
 .hero-content::after {
