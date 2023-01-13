@@ -109,17 +109,6 @@ function emailTest(element) {
     return emailRegex.test(value);
 };
 
-// function birthdateTest(element) {
-//     let value = element.value;
-//     let birthdate = new Date(value);
-//     let today = new Date();
-//     today.setFullYear(today.getFullYear() - 16);
-
-//     console.log(typeof value);
-
-//     return birthdate <= today;
-// }
-
 function birthdateTest(element) {
     let value = element.value;
     let today = new Date();

@@ -232,6 +232,10 @@ input {
     outline: none;
 }
 
+input:focus {
+    border: 0.15em  solid #279e7a !important;
+}
+
 .text-control {
     margin: 0;
     padding: 8px;
@@ -302,6 +306,14 @@ input {
     opacity: 0;
 }
 
+.checkbox-label:focus .checkbox-icon {
+    background-color: white;
+}
+
+.checkbox2-label:focus .checkbox-icon {
+    background-color: #279e7a;
+}
+
 .checkbox-input {
     display: none;
 }
@@ -361,6 +373,10 @@ input {
 
 .close:after {
     transform: rotate(-45deg);
+}
+
+.close:focus {
+    background-color: #279e7a;
 }
 
 .btn-submit,
