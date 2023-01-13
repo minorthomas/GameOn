@@ -1,8 +1,8 @@
-# Projet GameOn
-### Description
+# Projet GameOn - OpenClassrooms
+## Description
 Créez une landing page avec Javascript pour une plateforme événementielle de jeux-vidéo.  
 
-### Objectifs
+## Objectifs
 1. Créer la fonctionnalité pour fermer la modale d'inscription
 2. Lier les labels aux entrées dans le HTML en utilisant les attributs "for" et "id" dans le code existant. Corriger le code HTML quand nécessaire.
 3. Utiliser du JavaScript pur (pas de jQuery) pour terminer le formulaire :
@@ -22,15 +22,16 @@ Créez une landing page avec Javascript pour une plateforme événementielle de 
 
 Lien vers les issues: https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues
 
-### Voir le projet
+## Voir le projet
 
-__Visualiser le site web__  
+### Visualiser le site web
 1. Accédez à ce lien https://minorthomas.github.io/GameOn/
 <br/>OU<br/>
 2. Cliquez sur __github-pages__ dans le menu __Environments__ situé à droite.
 
-__Pour visualiser le code source__  
-1. Clonez le dossier. 
-2. Ouvrez le dossier sur votre éditeur de code. 
-
-
+### Visualiser le code source
+1. Clonez le dossier.
+2. Ouvrez le dossier sur votre éditeur de code.
+3. Lancez index.html
+OU
+4. Lancez l'extension __Go live__ de VSCode.
