@@ -25,7 +25,7 @@ Lien vers les issues: https://github.com/OpenClassrooms-Student-Center/GameOn-we
 ### Voir le projet
 
 __Visualiser le site web__  
-1. Accédez à ce lien https://minorthomas.github.io/GameOn-website-FR/
+1. Accédez à ce lien https://minorthomas.github.io/GameOn/
 <br/>OU<br/>
 2. Cliquez sur __github-pages__ dans le menu __Environments__ situé à droite.
 
