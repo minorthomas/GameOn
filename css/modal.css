@@ -36,10 +36,6 @@ img {
     margin: 3.5%;
 }
 
-.fa-bars {
-    color: red;
-}
-
 .header-logo {
     float: left;
 }
@@ -54,7 +50,6 @@ img {
     color: #000000;
     text-align: center;
     padding: 12px 12px;
-    margin: 5px;
     text-decoration: none;
     font-size: 20px;
     font-family: var(--font-default);
@@ -79,54 +74,9 @@ img {
 
 .topnav .icon {
     display: none;
-}
-
-@media screen and (max-width: 990px) {
-    .topnav a {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
-}
-
-@media screen and (max-width: 990px) {
-    .topnav.responsive {
-        position: relative;
-    }
-
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .hero-content .hero-headline {
-        font-size: 2.5em;
-    }
-
-    .hero-content .hero-text {
-        font-size: 0.8em;
-    }
-}
-
-@media screen and (max-width: 540px) {
-    .topnav a {
-        display: none;
-    }
-
-    .topnav a.icon {
-        float: right;
-        display: block;
-    }
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 main {
@@ -161,6 +111,11 @@ main {
     margin: 20px;
     padding: 10px;
     font-family: var(--font-slab);
+}
+
+.fa-bars::before {
+    color: red;
+    font-size: 1.5em;
 }
 
 /* Modal form */
@@ -471,19 +426,17 @@ input:focus {
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    overflow: hidden;
     box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
 }
 
 .hero-content {
-    padding: 51px 67px;
     grid-column: span 4;
     background: #232323;
     color: #fff;
     position: relative;
     text-align: left;
-    min-width: 424px;
+    padding: 3em;
 }
 
 .hero-content::after {
@@ -547,10 +500,34 @@ input:focus {
     display: none;
 }
 
+#confirm-signup {
+    display: none;
+    flex-direction: column;
+    height: 500px;
+    justify-content: space-around;
+}
+
+#confirm-signup p {
+    margin: auto;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.checkbox-label, .checkbox2-label, input[type=date], ::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
 footer {
     padding-left: 2vw;
     padding-right: 2vw;
     margin: 0 20px;
+}
+
+@media screen and (max-width: 540px) {
+    .hero-content .hero-headline {
+        font-size: 1.6em;
+        white-space: normal;
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -562,7 +539,7 @@ footer {
     .hero-content {
         background: #fff;
         color: #000;
-        padding: 20px;
+        padding: inherit;
     }
 
     .hero-content::after {
@@ -571,11 +548,6 @@ footer {
 
     .hero-content .btn-signup {
         display: none;
-    }
-
-    .hero-headline {
-        font-size: 4.5rem;
-        white-space: normal;
     }
 
     .hero-text {
@@ -598,7 +570,47 @@ footer {
         margin-top: 50px;
         text-align: center;
     }
+
+    .hero-content .hero-headline {
+        font-size: 2.5em;
+    }
+
+    .hero-content .hero-text {
+        font-size: 0.8em;
+    }
 }
+
+@media screen and (max-width: 1155px) {
+    .main-navbar {
+        margin-top: 2em;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    .topnav a {
+        display: none;
+    }
+
+    .topnav .icon {
+        float: right;
+        display: block;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
 
 @keyframes modalopen {
     from {
@@ -609,21 +621,4 @@ footer {
     to {
         opacity: 1;
     }
-}
-
-#confirm-signup {
-    display: none;
-    flex-direction: column;
-    height: 500px;
-    justify-content: space-around;
-}
-
-#confirm-signup p {
-    margin: auto;
-    text-align: center;
-    font-weight: lighter;
-}
-
-.checkbox-label, .checkbox2-label, input[type=date], ::-webkit-calendar-picker-indicator {
-    cursor: pointer;
 }
