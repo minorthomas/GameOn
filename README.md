@@ -16,8 +16,8 @@ Créez une __Landing Page__ avec __Javascript__ pour une plateforme événementi
       - Conserver les données du formulaire (ne pas effacer le formulaire) lorsqu'il ne passe pas la validation.
 4. Des messages d'erreur spécifiques doivent apparaître sous l'entrée qui n'est pas correcte. Les messages d'erreur doivent s'afficher sous le champ de saisie associé.
 5. Après une validation réussie, inclure un message de confirmation de la soumission réussie pour l'utilisateur.  
-6. Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions Mobile et Desktop. Corriger les erreurs d'affichage existantes.  
-7.Tester toutes les fonctionnalités des boutons et des entrées de formulaire (tester les valeurs correctes et incorrectes).
+6. Visualiser et tester l'interface utilisateur dans les dernières versions de Chrome et de Firefox, ainsi que dans les versions Mobile et Desktop. Corriger les erreurs d'affichage existantes.
+7. Tester toutes les fonctionnalités des boutons et des entrées de formulaire (tester les valeurs correctes et incorrectes).
 
 Lien vers les issues: https://github.com/OpenClassrooms-Student-Center/GameOn-website-FR/issues
 
